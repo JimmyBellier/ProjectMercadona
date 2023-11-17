@@ -1,0 +1,31 @@
+version: '3'   
+services:         
+  tomcat:                              
+    image: pyrojim/mercadona:latest                                            
+    build: .                                                       
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresql                                                 
+                                 
+  postgresql:                
+    image: postgres:16.0-alpine3.17                                            
+    ports:                                                         
+      - "5432:5432"                    
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data                               
+    environment:
+      - POSTGRES_DB=mercadona
+      - POSTGRES_USER=jimmy
+      - POSTGRES_PASSWORD=pyrojim                      
+                                                                   
+  pgadmin4:                            
+    image: dpage/pgadmin4
+    ports:        
+      - "8081:80"
+    environment:                                                   
+        - PGADMIN_DEFAULT_EMAIL=jimmy@une-pause-cafe.fr                        
+        - PGADMIN_DEFAULT_PASSWORD=pyrojim                                     
+
+volumes:                               
+  postgresql_data:
