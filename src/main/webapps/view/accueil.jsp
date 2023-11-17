@@ -17,7 +17,6 @@
 			<li><a href="catalogue.jsp">Catalogue</a></li>
 			<li><a href="produit.jsp">Produit</a></li>
 			<li><a href="connexion.jsp">Connexion</a></li>
-			<li><a href="connexion.jsp">Connexion</a></li>
 
 		</ul>
 	</div>
